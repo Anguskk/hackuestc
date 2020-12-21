@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>平安成电智慧通行</title>
 	<style>
 		* {
     		padding: 0;
@@ -140,10 +140,9 @@
 		.input-box {
 			position: absolute;
 			top: 0;
-
 			margin: 20px 20px;
 		}
-		.input-box input {
+		.input-box #name-text {
 			padding-left: 5px;
 			height: 25px;
 			width: 80px;
@@ -162,19 +161,39 @@
 			color: #fff;
 			cursor: pointer;
 		}
+		.r-box {
+			display: inline-block;
+		}
+		.out-in-text {
+			display: inline-block;
+		}
+		input[type=radio] {
+			vertical-align: middle;
+		}
 	</style>
 </head>
 <body>
 	<div class="app">
 		<div class="input-box">
-			<input type="text"  placeholder="输入姓名">
+			<input id="name-text" type="text"  placeholder="输入姓名">
+			<div class="r-box">
+				<label for="out">
+				出校
+					<input id="out" type="radio" name="school" value="出校登记成功！" checked>
+				</label>
+				<label for="in">
+					入校
+					<input id="in" type="radio" name="school" value="入校授权有效！">
+				</label>
+			</div>
+			
 			<div class="input-btn">
 				<span>隐藏</span>
 			</div>
 		</div>
 		<div class="header">
 			<span>
-				研究生用户，出校登记成功！
+				研究生用户，<div class="out-in-text">出校登记成功！</div>
 			</span>
 		</div>
 		<div class="list">
@@ -267,11 +286,18 @@
 		var $i = document.querySelector('.input-box input');
 		var $box = document.querySelector('.input-box');
 		var $btn = document.querySelector('.input-btn');
+		var $r = document.querySelector(".r-box");
+		var $rText = document.querySelector(".out-in-text");
+		
 		$btn.addEventListener('click', () => {
 			$box.style.display = 'none';
 		}, false);
 		$i.addEventListener('input', () => {
 			$name.innerHTML = $i.value;
+		}, false);
+		$r.addEventListener('click', (e) => {
+			var $checked = document.querySelector("[name='school']:checked");
+			$rText.innerHTML = $checked.value;
 		}, false);
 	</script>
 </body>
