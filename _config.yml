@@ -3,7 +3,7 @@
 # url is the full website URL
 # baseurl is the website's URL without the hostname
 # If you are building a GitHub project page then use these settings:
-url: "http://username.github.io/hackuestc"
+url: "http://anguskk.github.io/hackuestc"
 baseurl: "/hackuestc"
 
 # Of course don't forget to change the username and projectname to YOUR username and project
@@ -37,14 +37,6 @@ google_analytics: "UA-135646126-1"
 # disqus: ""
 
 # --- Misc --- #
-
-# Excerpt Word Length
-# Truncates the excerpt to the specified number of words on the index page
-excerpt_length: 5
-
-# Character used to separate site title and description in HTML document title
-# and RSS feed title
-title-separator: "-"
 
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
